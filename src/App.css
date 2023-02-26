@@ -38,8 +38,8 @@ body {
 .country__bottom {
   display: flex;
   flex-wrap: wrap;
-  column-gap: 2rem;
-  row-gap: 2rem;
+  gap: 1.5rem;
+  justify-content: center;
 }
 
 .country__card {

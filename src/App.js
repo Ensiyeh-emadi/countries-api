@@ -1,5 +1,5 @@
-import "./app.css";
-import { Routes, Route } from "react-router-dom";
+import "./App.css";
+import { Routes, Route, Link } from "react-router-dom";
 import AllCountries from "./components/AllCountries/AllCountries";
 import CountryInfo from "./components/CountryInfo/CountryInfo";
 
@@ -8,7 +8,9 @@ function App() {
     <>
       <div className="header">
         <div className="container">
-          <h5>Where in the world</h5>
+          <Link to={"/"}>
+            <h5>Where in the world</h5>
+          </Link>
         </div>
       </div>
       <div className="container">

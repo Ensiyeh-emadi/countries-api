@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { apiURL } from "../util/api";
+import { v4 as uuidv4 } from "uuid";
 
 import SearchInput from "../Search/SearchInput";
 import FilterCountry from "../FilterCountry/FilterCountry";
@@ -19,7 +20,7 @@ const AllCountries = () => {
 
       const data = await res.json();
 
-      console.log(data);
+      // console.log(data);
 
       setCountries(data);
 
@@ -34,7 +35,7 @@ const AllCountries = () => {
     try {
       const res = await fetch(`${apiURL}/name/${countryName}`);
 
-      if (!res.ok) throw new Error("Not found any country!");
+      if (!res.ok) throw new Error("");
 
       const data = await res.json();
       setCountries(data);
@@ -83,7 +84,11 @@ const AllCountries = () => {
         {error && !isLoading && <h4>{error}</h4>}
 
         {countries?.map((country) => (
-          <Link to={`/country/${country.name.common}`} state={country}>
+          <Link
+            to={`/country/${country.name.common}`}
+            state={country}
+            key={uuidv4()}
+          >
             <div className="country__card">
               <div className="country__img">
                 <img src={country.flags.png} alt="" />

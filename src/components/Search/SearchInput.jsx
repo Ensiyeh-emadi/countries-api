@@ -3,20 +3,18 @@ import React, { useState } from "react";
 const SearchInput = ({ onSearch }) => {
   const [input, setInput] = useState("");
 
-  const submitHandler = (e) => {
-    e.preventDefault();
-
-    onSearch(input);
+  const handleChange = (e) => {
+    setInput(e.target.value);
+    onSearch(e.target.value);
   };
-  console.log(input);
 
   return (
-    <form onSubmit={submitHandler}>
+    <form>
       <input
         type="text"
-        placeholder="Search a country......"
+        placeholder="Search a country..."
         value={input}
-        onChange={(e) => setInput(e.target.value)}
+        onChange={handleChange}
       />
     </form>
   );

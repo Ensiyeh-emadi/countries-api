@@ -1,10 +1,12 @@
-import { Link, useLocation, useNavigate } from "react-router-dom";
-import { v4 as uuidv4, v4 } from "uuid";
+import { useLocation, useNavigate } from "react-router-dom";
+import { v4 as uuidv4 } from "uuid";
 const CountryInfo = () => {
   const state = useLocation();
   const lang = Object.keys(state.state.languages)[0];
   const key = Object.keys(state.state.name.nativeName)[0];
   const cur = Object.keys(state.state.currencies)[0];
+
+  console.log(state.state);
 
   const navigate = useNavigate();
 
@@ -40,6 +42,9 @@ const CountryInfo = () => {
             </h5>
             <h5>
               Currencies: <span>{state.state.currencies[cur].name}</span>
+            </h5>
+            <h5>
+              Top Level Domain: <span>{state.state.tld}</span>
             </h5>
             <h5>
               Languages: <span>{state.state.languages[lang]}</span>
