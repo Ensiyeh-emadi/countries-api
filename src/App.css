@@ -13,10 +13,6 @@
   margin: auto !important;
 }
 
-body {
-  background: hsl(207, 26%, 17%);
-}
-
 .header {
   width: 100%;
   height: 70px;
@@ -24,15 +20,26 @@ body {
   position: fixed;
   top: 0;
   left: 0;
-  background: hsl(209, 23%, 22%);
+  background: white;
+  color: black;
   z-index: 11;
+  display: flex;
+  justify-content: space-around;
+}
+.left {
+  width: 80%;
+  cursor: pointer;
+}
+.right {
+  width: 10%;
+  cursor: pointer;
 }
 
 .header h5 {
-  display: flex;
-  align-items: center;
   font-size: 1.3rem;
-  color: #fff;
+  color: black;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
+    rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
 }
 
 .country__bottom {
@@ -46,8 +53,7 @@ body {
   width: 250px;
 
   border-radius: 5px;
-  background: hsl(209, 23%, 22%);
-  color: #fff;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 }
 
 .country__img img {
@@ -68,12 +74,14 @@ body {
   margin-top: 10px;
   margin-bottom: 15px;
   font-weight: 500;
+  color: black;
 }
 
 .country__data h6 {
   margin-bottom: 10px;
-  font-weight: 400;
+  font-weight: 800;
   opacity: 80%;
+  color: black;
 }
 
 .country__bottom h4 {
@@ -84,17 +92,16 @@ body {
 
 input {
   padding: 10px 25px;
-  color: #fff;
+  color: black;
   border-radius: 5px;
-  background: hsl(209, 23%, 22%);
-  border: none;
+
   outline: none;
   margin-bottom: 50px;
   cursor: pointer;
 }
 
 ::placeholder {
-  color: #fff;
+  color: black;
 }
 
 .country__top {
@@ -106,12 +113,12 @@ input {
 
 select {
   padding: 10px 25px;
-  background: hsl(209, 23%, 22%);
+
   margin-bottom: 50px;
-  border: none;
+
   outline: none;
   border-radius: 5px;
-  color: #fff;
+
   cursor: pointer;
 }
 
@@ -131,8 +138,7 @@ select {
 
 button {
   padding: 10px 25px;
-  color: #fff;
-  background: hsl(209, 23%, 22%);
+
   border: none;
   outline: none;
   cursor: pointer;
@@ -147,19 +153,27 @@ a {
 }
 
 .country__info h3 {
-  color: #fff;
+  color: black;
   font-size: 1.3rem;
   margin-bottom: 30px;
 }
 
 .country__info-left h5 {
-  color: #fff;
+  color: black;
   font-size: 0.9rem;
   font-weight: 400;
   margin-bottom: 10px;
 }
 .country__info-left h5 span {
-  color: #fff;
+  color: black;
   opacity: 85%;
   font-weight: 400;
+}
+.light {
+  color: hsl(207, 26%, 17%);
+  background-color: white;
+}
+.dark {
+  color: white;
+  background-color: hsl(207, 26%, 17%);
 }

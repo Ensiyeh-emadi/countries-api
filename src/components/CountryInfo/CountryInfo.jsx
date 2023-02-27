@@ -1,6 +1,6 @@
 import { useLocation, useNavigate } from "react-router-dom";
 import { v4 as uuidv4 } from "uuid";
-const CountryInfo = () => {
+const CountryInfo = ({ darkMode }) => {
   const state = useLocation();
   const lang = Object.keys(state.state.languages)[0];
   const key = Object.keys(state.state.name.nativeName)[0];

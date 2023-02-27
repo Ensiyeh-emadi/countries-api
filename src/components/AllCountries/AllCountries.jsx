@@ -7,7 +7,7 @@ import FilterCountry from "../FilterCountry/FilterCountry";
 
 import { Link } from "react-router-dom";
 
-const AllCountries = () => {
+const AllCountries = ({ darkMode }) => {
   const [countries, setCountries] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState("");
@@ -16,7 +16,7 @@ const AllCountries = () => {
     try {
       const res = await fetch(`${apiURL}/all`);
 
-      if (!res.ok) throw new Error("Something went wrong!");
+      if (!res.ok) throw new Error("");
 
       const data = await res.json();
 
@@ -78,7 +78,6 @@ const AllCountries = () => {
           <FilterCountry onSelect={getCountryByRegion} />
         </div>
       </div>
-
       <div className="country__bottom">
         {isLoading && !error && <h4>Loading........</h4>}
         {error && !isLoading && <h4>{error}</h4>}

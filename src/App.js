@@ -1,22 +1,22 @@
 import "./App.css";
-import { Routes, Route, Link } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 import AllCountries from "./components/AllCountries/AllCountries";
 import CountryInfo from "./components/CountryInfo/CountryInfo";
+import Header from "./Header/Header";
+import { useState } from "react";
 
 function App() {
+  const [darkMode, setDarkMode] = useState(false);
   return (
     <>
-      <div className="header">
-        <div className="container">
-          <Link to={"/"}>
-            <h5>Where in the world</h5>
-          </Link>
-        </div>
-      </div>
+      <Header darkMode={darkMode} setDarkMode={setDarkMode} />
       <div className="container">
         <Routes>
-          <Route path="/" element={<AllCountries />} />
-          <Route path="/country/:countryName" element={<CountryInfo />} />
+          <Route path="/" element={<AllCountries darkMode={darkMode} />} />
+          <Route
+            path="/country/:countryName"
+            element={<CountryInfo darkMode={darkMode} />}
+          />
         </Routes>
       </div>
     </>
