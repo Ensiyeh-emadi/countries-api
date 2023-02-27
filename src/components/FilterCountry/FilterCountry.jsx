@@ -1,13 +1,16 @@
 import React from "react";
 
-const FilterCountry = ({ onSelect }) => {
+const FilterCountry = ({ onSelect, darkMode }) => {
   const selectHandler = (e) => {
     const regionName = e.target.value;
     onSelect(regionName);
   };
 
   return (
-    <select onChange={selectHandler}>
+    <select
+      onChange={selectHandler}
+      className={`${darkMode ? "dark" : "light"}`}
+    >
       <option className="option">Filter by Region</option>
       <option className="option" value="Africa">
         Africa

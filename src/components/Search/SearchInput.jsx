@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-const SearchInput = ({ onSearch }) => {
+const SearchInput = ({ onSearch, darkMode }) => {
   const [input, setInput] = useState("");
 
   const handleChange = (e) => {
@@ -11,6 +11,7 @@ const SearchInput = ({ onSearch }) => {
   return (
     <form>
       <input
+        className={`${darkMode ? "dark" : "light"}`}
         type="text"
         placeholder="Search a country..."
         value={input}

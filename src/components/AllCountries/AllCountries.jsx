@@ -69,16 +69,16 @@ const AllCountries = ({ darkMode }) => {
 
   return (
     <div className="all__country__wrapper">
-      <div className="country__top">
+      <div className={`country__top ${darkMode ? "dark" : "light"}`}>
         <div className="search">
-          <SearchInput onSearch={getCountryByName} />
+          <SearchInput darkMode={darkMode} onSearch={getCountryByName} />
         </div>
 
         <div className="filter">
-          <FilterCountry onSelect={getCountryByRegion} />
+          <FilterCountry darkMode={darkMode} onSelect={getCountryByRegion} />
         </div>
       </div>
-      <div className="country__bottom">
+      <div className={`country__bottom ${darkMode ? "dark" : "light"}`}>
         {isLoading && !error && <h4>Loading........</h4>}
         {error && !isLoading && <h4>{error}</h4>}
 
@@ -88,7 +88,7 @@ const AllCountries = ({ darkMode }) => {
             state={country}
             key={uuidv4()}
           >
-            <div className="country__card">
+            <div className={`country__card ${darkMode ? "dark" : "light"}`}>
               <div className="country__img">
                 <img src={country.flags.png} alt="" />
               </div>

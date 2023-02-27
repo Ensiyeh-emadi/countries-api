@@ -12,7 +12,12 @@ const CountryInfo = ({ darkMode }) => {
 
   return (
     <div className="country__info__wrapper">
-      <button onClick={() => navigate("/")}>Back</button>
+      <button
+        className={`${darkMode ? "light" : "dark"}`}
+        onClick={() => navigate("/")}
+      >
+        Back
+      </button>
 
       <div className="country__info__container">
         <div className="country__info-img">
@@ -55,7 +60,12 @@ const CountryInfo = ({ darkMode }) => {
                 Borders Countries:{" "}
                 <div>
                   {state.state.borders.map((border) => (
-                    <button key={uuidv4()}>{border}</button>
+                    <button
+                      className={`${darkMode ? "light" : "dark"}`}
+                      key={uuidv4()}
+                    >
+                      {border}
+                    </button>
                   ))}
                 </div>
               </h5>
